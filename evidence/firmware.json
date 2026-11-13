@@ -1,0 +1,31 @@
+{
+  "model": "MF761W V1.1 OM QX P005",
+  "kernel": "3.4.110-rt140",
+  "partition": "mtd4",
+  "offset_hex": "0x468000",
+  "erase_block_bytes": 32768,
+  "stock_sha256": "b21b331da0a6376b18c1af97eb7785838e2695ad0ae85db474ca15cf8312c17f",
+  "installed_reference": {
+    "image_sha256": "082c94d2eda4015b9400dd5ef7341d7a2af4455d47c2fc2ce6d929760a5653d9",
+    "image_bytes": 3186688,
+    "partition_readback_sha256": "1586e04e22591352941d8f8090fa8a08609c364a32d9111df1f38ceb2d9a8adf",
+    "readback_exact_with_ff_padding": true,
+    "hardware_boot_verified": true
+  },
+  "public_rootfs": {
+    "variant": "public",
+    "image_bytes": 2281472,
+    "image_sha256": "1ad68a9acd1f432e99636c128a895fcef4cd6d83ed734ad81967c843981e97dc",
+    "stock_sha256": "b21b331da0a6376b18c1af97eb7785838e2695ad0ae85db474ca15cf8312c17f",
+    "partition_bytes": 3244032,
+    "overlay_sha256": "1ce98bbcefc8c12a4434f2d9be59cf0b07a43cdb51380e8434cbe73c9c2655be",
+    "roundtrip": true,
+    "reproduced_twice": true,
+    "hardware_boot_tested": false
+  },
+  "owner_local_composition": {
+    "bytes": 2297856,
+    "sha256": "697788c3c72180473d83137494ce138eae9bc9c395528193b87c6bdd8b52f06a",
+    "hardware_boot_tested": false
+  }
+}

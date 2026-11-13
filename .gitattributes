@@ -1,0 +1,6 @@
+* text=auto eol=lf
+device/bin/* -text
+firmware/*.mfp -text
+firmware/*.squashfs -text
+notices/*.txt -whitespace
+device/dhcp.sh -whitespace

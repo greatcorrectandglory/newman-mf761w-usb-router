@@ -1,0 +1,50 @@
+[
+  {
+    "sample": 1,
+    "traffic": "tcp=27 dns=35 bytes=1070170 queue_peak=31 ready_peak=31 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 9,
+    "core_connections": 7
+  },
+  {
+    "sample": 2,
+    "traffic": "tcp=27 dns=35 bytes=1070170 queue_peak=31 ready_peak=31 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 9,
+    "core_connections": 7
+  },
+  {
+    "sample": 3,
+    "traffic": "tcp=27 dns=35 bytes=1070170 queue_peak=31 ready_peak=31 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 8,
+    "core_connections": 7
+  },
+  {
+    "sample": 4,
+    "traffic": "tcp=27 dns=35 bytes=1070170 queue_peak=31 ready_peak=31 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 9,
+    "core_connections": 8
+  },
+  {
+    "sample": 5,
+    "traffic": "tcp=27 dns=35 bytes=1070170 queue_peak=31 ready_peak=31 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 9,
+    "core_connections": 8
+  },
+  {
+    "sample": 6,
+    "traffic": "tcp=27 dns=37 bytes=1070170 queue_peak=35 ready_peak=35 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 10,
+    "core_connections": 8
+  },
+  {
+    "sample": 7,
+    "traffic": "tcp=27 dns=37 bytes=1070170 queue_peak=35 ready_peak=35 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 10,
+    "core_connections": 8
+  },
+  {
+    "sample": 8,
+    "traffic": "tcp=27 dns=37 bytes=1070170 queue_peak=35 ready_peak=35 idle_wakes=5 socks_retries=0 socks_failed=0",
+    "waiting_payload": 9,
+    "core_connections": 8
+  }
+]

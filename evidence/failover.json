@@ -1,0 +1,94 @@
+{
+  "start": "2026-11-13T09:31:45.325084+00:00",
+  "states": [
+    {
+      "time": "2026-11-13T09:31:45.368067+00:00",
+      "status": "online US3 https"
+    },
+    {
+      "time": "2026-11-13T09:31:58.838816+00:00",
+      "status": "offline US3 probe"
+    },
+    {
+      "time": "2026-11-13T09:32:13.537641+00:00",
+      "status": "checking US2 connecting"
+    },
+    {
+      "time": "2026-11-13T09:32:19.330363+00:00",
+      "status": "online US2 https"
+    },
+    {
+      "time": "2026-11-13T09:32:35.450387+00:00",
+      "status": "offline US2 probe"
+    },
+    {
+      "time": "2026-11-13T09:32:50.115933+00:00",
+      "status": "checking TEST1 connecting"
+    },
+    {
+      "time": "2026-11-13T09:32:59.151414+00:00",
+      "status": "online TEST1 https"
+    },
+    {
+      "time": "2026-11-13T09:33:13.798883+00:00",
+      "status": "offline TEST1 probe"
+    },
+    {
+      "time": "2026-11-13T09:33:29.717245+00:00",
+      "status": "checking SPEED connecting"
+    },
+    {
+      "time": "2026-11-13T09:33:54.407289+00:00",
+      "status": "offline SPEED probe"
+    },
+    {
+      "time": "2026-11-13T09:34:10.435411+00:00",
+      "status": "offline US3 retry"
+    },
+    {
+      "time": "2026-11-13T09:34:25.116898+00:00",
+      "status": "checking US3 connecting"
+    },
+    {
+      "time": "2026-11-13T09:34:33.802044+00:00",
+      "status": "online US3 https"
+    }
+  ],
+  "checks": {
+    "initial_us3": {
+      "status": "online US3 https",
+      "led": "green"
+    },
+    "lost_primary": {
+      "status": "offline US3 probe",
+      "led": "red"
+    },
+    "select_us2": {
+      "status": "online US2 https",
+      "led": "green"
+    },
+    "select_test1": {
+      "status": "online TEST1 https",
+      "led": "green"
+    },
+    "try_speed": {
+      "status": "checking SPEED connecting",
+      "led": "red"
+    },
+    "speed_probe": {
+      "status": "offline SPEED probe",
+      "led": "red"
+    },
+    "all_unavailable": {
+      "status": "offline US3 retry",
+      "led": "red"
+    },
+    "automatic_recovery": {
+      "status": "online US3 https",
+      "led": "green"
+    }
+  },
+  "no_direct_forward": true,
+  "test_rules_removed": true,
+  "end": "2026-11-13T09:34:34.054117+00:00"
+}

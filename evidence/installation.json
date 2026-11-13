@@ -1,0 +1,34 @@
+{
+  "files_verified": {
+    "service.sh": true,
+    "manager.sh": true,
+    "resolve.sh": true,
+    "network.sh": true,
+    "dhcp.sh": true,
+    "firewall.v4": true,
+    "firewall.v6": true,
+    "forward": true,
+    "check": true,
+    "zram": true,
+    "core_in_device_memory": true,
+    "profile_permissions": true,
+    "fault_test_rules_removed": true
+  },
+  "primary": "online US3 https",
+  "green": [
+    "none mmc0 mmc1 [timer] rfkill0 ",
+    "500",
+    "500"
+  ],
+  "red": [
+    "[none] mmc0 mmc1 timer rfkill0 ",
+    "0"
+  ],
+  "usb_default": true,
+  "zram_kib": 12284,
+  "forwarding": [
+    "0",
+    "0"
+  ],
+  "test": true
+}

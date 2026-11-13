@@ -1,0 +1,29 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i br0 -p udp --dport 443 -j REJECT --reject-with icmp-port-unreachable
+-A INPUT -i br0 -p udp --sport 68 --dport 67 -j ACCEPT
+-A INPUT -i br0 -s 192.168.0.0/24 -j ACCEPT
+-A INPUT -i usblan0 -p udp --sport 67 --dport 68 -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i br0 -p udp --dport 443 -j REJECT --reject-with icmp-port-unreachable
+-A OUTPUT -o wlan0-vxd -j DROP
+-A OUTPUT -o wan+ -j DROP
+COMMIT
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:NEWMAN_USB - [0:0]
+-A PREROUTING -i br0 -s 192.168.0.0/24 -j NEWMAN_USB
+-A NEWMAN_USB -p udp --dport 53 -j REDIRECT --to-ports 1053
+-A NEWMAN_USB -p tcp --dport 53 -j REDIRECT --to-ports 1053
+-A NEWMAN_USB -d 192.168.0.0/24 -j RETURN
+-A NEWMAN_USB -d 224.0.0.0/4 -j RETURN
+-A NEWMAN_USB -d 255.255.255.255/32 -j RETURN
+-A NEWMAN_USB -p udp --dport 443 -j REDIRECT --to-ports 443
+-A NEWMAN_USB -p tcp -j REDIRECT --to-ports 12345
+COMMIT

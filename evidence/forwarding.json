@@ -1,0 +1,36 @@
+{
+  "gateway": "online US3 https",
+  "dns": [
+    {
+      "test": "16 simultaneous UDP A and HTTPS queries",
+      "received": 16,
+      "passed": true,
+      "seconds": 4.355
+    },
+    {
+      "test": "UDP DNSKEY respects 512-byte limit",
+      "passed": true,
+      "bytes": 21
+    },
+    {
+      "test": "TCP DNSKEY returns complete answer",
+      "passed": true,
+      "bytes": 869
+    }
+  ],
+  "https": [
+    {
+      "host": "example.com",
+      "status": 200,
+      "bytes": 577,
+      "verified": true
+    },
+    {
+      "host": "www.gstatic.com",
+      "status": 204,
+      "bytes": 0,
+      "verified": true
+    }
+  ],
+  "pass": true
+}

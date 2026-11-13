@@ -1,0 +1,83 @@
+[
+  {
+    "site": "www.baidu.com",
+    "document_http": 200,
+    "dom_event": true,
+    "load_event": true,
+    "window_seconds": 65,
+    "tls": "secure",
+    "header_seconds": 3.95,
+    "timing_ms": {
+      "dnsStart": 0,
+      "dnsEnd": 1036.9,
+      "connectStart": 1039.1,
+      "connectEnd": 3060.8,
+      "sslStart": 1044.9,
+      "sslEnd": 3060.7,
+      "sendEnd": 3062.3,
+      "receiveHeadersEnd": 3923.2
+    },
+    "document_seconds": 4.38,
+    "dom_seconds": 16.31,
+    "seconds": 48.67,
+    "resource_responses": 91,
+    "ready_state": "complete",
+    "page_content": true,
+    "search_box": true,
+    "first_contentful_paint_seconds": 8.23
+  },
+  {
+    "site": "www.google.com",
+    "document_http": 200,
+    "dom_event": true,
+    "load_event": true,
+    "window_seconds": 65,
+    "tls": "secure",
+    "header_seconds": 4.14,
+    "timing_ms": {
+      "dnsStart": 0,
+      "dnsEnd": 2619.3,
+      "connectStart": 2619.3,
+      "connectEnd": 3555.3,
+      "sslStart": 2628.4,
+      "sslEnd": 3555.2,
+      "sendEnd": 3559.0,
+      "receiveHeadersEnd": 4112.2
+    },
+    "document_seconds": 4.73,
+    "dom_seconds": 5.28,
+    "seconds": 9.89,
+    "resource_responses": 17,
+    "ready_state": "complete",
+    "page_content": true,
+    "search_box": true,
+    "first_contentful_paint_seconds": 4.41
+  },
+  {
+    "site": "example.com",
+    "document_http": 200,
+    "dom_event": true,
+    "load_event": true,
+    "window_seconds": 65,
+    "tls": "secure",
+    "header_seconds": 12.28,
+    "timing_ms": {
+      "dnsStart": 0,
+      "dnsEnd": 4148.8,
+      "connectStart": 4148.8,
+      "connectEnd": 11947.3,
+      "sslStart": 4158.9,
+      "sslEnd": 11947.3,
+      "sendEnd": 11948.9,
+      "receiveHeadersEnd": 12253.2
+    },
+    "document_seconds": 12.26,
+    "dom_seconds": 12.56,
+    "seconds": 12.56,
+    "resource_responses": 2,
+    "ready_state": "complete",
+    "page_content": true,
+    "search_box": false,
+    "first_contentful_paint_seconds": 12.37
+  }
+]

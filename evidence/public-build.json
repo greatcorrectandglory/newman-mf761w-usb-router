@@ -1,0 +1,36 @@
+{
+  "device_utilities": {
+    "forward": {
+      "bytes": 49004,
+      "sha256": "76f4387f61c747c692ecbae06e3412300c413ad0d35f777b2ace15f8ba68df38",
+      "matches_field_executable": true,
+      "rebuild_matches": true
+    },
+    "zram": {
+      "bytes": 44684,
+      "sha256": "8e554216bf268ce42b394cc3b11028cc8641423986616c7ef87075106fff2760",
+      "matches_field_executable": true,
+      "rebuild_matches": true
+    },
+    "check": {
+      "bytes": 171048,
+      "sha256": "96969af189c5d6df881f0b031f304144a059917239322c91fb877afc8aa3661e",
+      "matches_field_executable": true,
+      "rebuild_matches": true
+    }
+  },
+  "runtime_build": {
+    "upstream": "v2.0.0",
+    "commit": "0e1ba5cf7a9a9cf28fd7fe143f56e82b6a346632",
+    "clean_source_build": "passed",
+    "architecture": "ELF32, ARM EABI, little-endian, soft float",
+    "bytes": 2977144,
+    "new_binary_deployed": false
+  },
+  "host": {
+    "profile_validation_positive_and_negative": "passed",
+    "read_only_live_status": "online US3 https",
+    "full_public_installer_on_device": "not run"
+  },
+  "public_image_reflashed": false
+}

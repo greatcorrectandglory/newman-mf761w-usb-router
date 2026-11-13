@@ -1,0 +1,89 @@
+{
+  "bound_to": "wlan0",
+  "attempts": [
+    {
+      "round": 1,
+      "site": "example",
+      "code": "200",
+      "verify": "0",
+      "dns": "0.738765",
+      "tcp": "0.751870",
+      "tls": "1.493730",
+      "first": "1.721243",
+      "duration": "1.722000",
+      "bytes": "577",
+      "rc": "0"
+    },
+    {
+      "round": 1,
+      "site": "baidu",
+      "code": "000",
+      "verify": "1",
+      "dns": "0.255785",
+      "tcp": "0.000000",
+      "tls": "0.000000",
+      "first": "0.000000",
+      "duration": "7.001887",
+      "bytes": "0",
+      "rc": "28"
+    },
+    {
+      "round": 1,
+      "site": "google",
+      "code": "200",
+      "verify": "0",
+      "dns": "0.749749",
+      "tcp": "0.761801",
+      "tls": "3.825776",
+      "first": "4.115119",
+      "duration": "4.582849",
+      "bytes": "86481",
+      "rc": "0"
+    },
+    {
+      "round": 1,
+      "site": "gstatic",
+      "code": "204",
+      "verify": "0",
+      "dns": "0.684387",
+      "tcp": "0.703775",
+      "tls": "4.161478",
+      "first": "4.447799",
+      "duration": "4.447966",
+      "bytes": "0",
+      "rc": "0"
+    },
+    {
+      "round": 1,
+      "site": "android",
+      "code": "204",
+      "verify": "0",
+      "dns": "0.700791",
+      "tcp": "0.709868",
+      "tls": "0.000000",
+      "first": "3.194595",
+      "duration": "3.194747",
+      "bytes": "0",
+      "rc": "0"
+    },
+    {
+      "round": 1,
+      "site": "xiaomi",
+      "code": "204",
+      "verify": "0",
+      "dns": "0.259140",
+      "tcp": "0.268503",
+      "tls": "0.000000",
+      "first": "2.166003",
+      "duration": "2.166058",
+      "bytes": "0",
+      "rc": "0"
+    }
+  ],
+  "android_validated": [
+    true
+  ],
+  "device_status": [
+    "online US3 https"
+  ]
+}
