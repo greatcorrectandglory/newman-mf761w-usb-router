@@ -1,5 +1,5 @@
 {
-  "gateway": "online US3 https",
+  "gateway": "online primary https",
   "dns": [
     {
       "test": "16 simultaneous UDP A and HTTPS queries",

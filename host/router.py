@@ -16,7 +16,7 @@ BASE = Path(__file__).resolve().parents[1]
 LOCAL = BASE / ".local"
 APP = "/etc_rw/newman-usb"
 RAM = "/tmp/newman-usb"
-ALIASES = ("US3", "US2", "TEST1", "SPEED")
+ROLES = ("primary", "backup-1", "backup-2", "backup-3")
 SCRIPTS = ("manager.sh", "service.sh", "network.sh", "dhcp.sh", "resolve.sh", "firewall.v4", "firewall.v6")
 BINARIES = ("check", "forward", "zram")
 STOP = LOCAL / "stopped"
@@ -29,10 +29,13 @@ def check_core(path):
         raise ValueError("Expected a 32-bit little-endian ARM core")
 
 
-def validate_profiles(directory):
+def validate_profiles(directory, filenames=ROLES):
+    if (len(filenames) != len(ROLES) or len({os.path.normcase(n) for n in filenames}) != len(ROLES)
+            or any(n in ("", ".", "..") or Path(n).name != n or "/" in n or "\\" in n for n in filenames)):
+        raise ValueError("Provide four distinct filenames from the nodes directory, in priority order")
     paths = {}
-    for name in ALIASES:
-        path = directory / name
+    for name, filename in zip(ROLES, filenames):
+        path = directory / filename
         if not path.is_file() or path.stat().st_size > 4096:
             raise ValueError(name + " profile missing or oversized")
         try:
@@ -108,8 +111,8 @@ class Gateway:
         self.shell(APP + "/service.sh start")
         return self.status()
 
-    def install(self, core, nodes):
-        files = validate_profiles(nodes)
+    def install(self, core, nodes, filenames=ROLES):
+        files = validate_profiles(nodes, filenames)
         check_core(core)
         self.identify()
         self.shell("umask 077; mkdir -p " + APP + "/nodes && chmod 700 " + APP + " " + APP + "/nodes")
@@ -134,10 +137,12 @@ def main():
     cli.add_argument("--port", type=int, default=15037)
     cli.add_argument("--core", type=Path, default=LOCAL / "core-arm")
     cli.add_argument("--nodes", type=Path, default=LOCAL / "nodes")
+    cli.add_argument("--profile-files", nargs=4, default=ROLES, metavar=("PRIMARY", "BACKUP1", "BACKUP2", "BACKUP3"),
+                     help="local filenames for validate/install, in priority order")
     args = cli.parse_args()
     os.environ.setdefault("ANDROID_USER_HOME", str(LOCAL / "adb-state"))
     if args.action == "validate":
-        validate_profiles(args.nodes)
+        validate_profiles(args.nodes, args.profile_files)
         check_core(args.core)
         print("Four profiles and the ARM runtime passed local checks")
         return
@@ -154,7 +159,7 @@ def main():
                     pass
             time.sleep(8)
     elif args.action == "install":
-        print(gateway.install(args.core, args.nodes))
+        print(gateway.install(args.core, args.nodes, args.profile_files))
     elif args.action == "start":
         gateway.identify()
         STOP.unlink(missing_ok=True)

@@ -15,7 +15,10 @@ case "$1" in
     start)
         trap '' HUP
         mkdir -p "$state"
-        test -x "$state/core" && test -r "$root/nodes/SPEED"
+        test -x "$state/core" || exit 2
+        for profile in primary backup-1 backup-2 backup-3; do
+            test -s "$root/nodes/$profile" || exit 2
+        done
         if running; then echo RUNNING; exit 0; fi
         if ! mkdir "$state/starting" 2>/dev/null; then
             sleep 2

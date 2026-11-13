@@ -3,7 +3,7 @@ set -eu
 umask 077
 root=/etc_rw/newman-usb
 state=/tmp/newman-usb
-case "$1" in US3|US2|TEST1|SPEED) name=$1;; *) exit 2;; esac
+case "$1" in primary|backup-1|backup-2|backup-3) name=$1;; *) exit 2;; esac
 uri=$(cat "$root/nodes/$name")
 authority=${uri#*@}
 hostport=${authority%%\?*}

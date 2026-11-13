@@ -18,7 +18,18 @@ $env:MF761W_SERIAL = '<上一步显示的纽曼设备序列号>'
 
 ## 节点文件
 
-在项目根目录创建 `.local/nodes/`，里面建立名称准确的 `US3`、`US2`、`TEST1`、`SPEED` 四个文件。每个文件只包含一条自己的完整 VLESS URI，纯 ASCII，不含行尾换行、备注片段或 BOM。使用 TCP 或 raw 传输、REALITY、有效 SNI 和公钥，支持 Vision。四个文件在设备上按 0600 保存。准备好的 ARM 核心放到 `.local/core-arm`。[核心构建步骤](build.md)
+在项目根目录创建 `.local/nodes/`，为自己的四个节点各准备一个文件。文件名表示配置的用途。
+
+| 本地默认文件名 | 用途 |
+| --- | --- |
+| `primary` | 启动时优先使用的主节点 |
+| `backup-1` | 第一个备用节点 |
+| `backup-2` | 第二个备用节点 |
+| `backup-3` | 第三个备用节点 |
+
+每个文件保存一条完整的 VLESS URI，使用 ASCII 编码，省略行尾换行、备注片段和 BOM。使用 TCP 或 raw 传输、REALITY、有效 SNI 和公钥，支持 Vision。设备上的配置文件权限为 0600。准备好的 ARM 核心放到 `.local/core-arm`。[核心构建步骤](build.md)
+
+已有四个配置文件时可以保留自己的文件名。在 `validate` 和 `install` 两条命令后都加上 `--profile-files`，依次传入主节点和三个备用节点的本地文件名。主机按该顺序安装，设备状态始终使用上表的角色。由 v1.0.0 升级时，指定原有的四个文件名或按上表命名，再执行安装即可。
 
 下例只展示字段结构，尖括号中的文本要替换为本人节点参数。
 
@@ -43,7 +54,7 @@ python host/router.py install
 python host/router.py status
 ```
 
-`online US3 https` 表示 US3 的 HTTPS 探测通过。`online US3 traffic` 表示本轮内确实有新的加密流量交付给客户端。设备用绿色 Wi-Fi 灯 `wifi_led` 和红色蜂窝灯 `modem_r_led` 表示状态。USB 中断、切换或无法确认连通时红闪。断电时指示灯熄灭。
+`online primary https` 表示主节点通过 HTTPS 证书和响应码检查。`online primary traffic` 表示已有连接在本轮探测期间将新的下行数据交付给热点客户端，最近一次交付在 12 秒内。绿灯为 `wifi_led`，红灯为 `modem_r_led`。USB 中断、节点切换或无法确认连通时红闪。断电时指示灯熄灭。
 
 电脑重新登录、设备断电或重插后，需要 `start` 或持续运行的 `watch` 通过 USB 重新加载 RAM 核心。运行以下命令可在当前终端持续监听重插。需要登录后自动启动时，可将同一命令加入自己的 Windows 登录启动项，并将 ADB 路径与序列号作为参数传给它。固定 Python 和脚本的绝对路径，工作目录设置为本项目。
 

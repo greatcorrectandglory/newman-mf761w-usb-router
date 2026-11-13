@@ -1,4 +1,4 @@
-"""Create the v1.0.0 release from the committed tree and the validated public image."""
+"""Create the release from the committed tree and the validated public image."""
 import argparse
 import hashlib
 import io
@@ -9,7 +9,7 @@ import tarfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PREFIX = "newman-mf761w-p005-usb-router-v1.0.0"
+PREFIX = "newman-mf761w-p005-usb-router-v1.1.0"
 IMAGE = "mf761w-p005-mtd4-public.squashfs"
 PATCH = "mf761w-p005-usb-router.mfp"
 

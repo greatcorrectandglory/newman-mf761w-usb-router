@@ -15,17 +15,17 @@
   "public_rootfs": {
     "variant": "public",
     "image_bytes": 2281472,
-    "image_sha256": "1ad68a9acd1f432e99636c128a895fcef4cd6d83ed734ad81967c843981e97dc",
+    "image_sha256": "dd7af83879a08fea4885d55e17bd283a97bb1e88051081391dd2d01bcc65938a",
     "stock_sha256": "b21b331da0a6376b18c1af97eb7785838e2695ad0ae85db474ca15cf8312c17f",
     "partition_bytes": 3244032,
-    "overlay_sha256": "1ce98bbcefc8c12a4434f2d9be59cf0b07a43cdb51380e8434cbe73c9c2655be",
+    "overlay_sha256": "52e95f6b800885c07970293c482bd52f71d4208a275715d4751cac7fe9cd3d25",
     "roundtrip": true,
     "reproduced_twice": true,
     "hardware_boot_tested": false
   },
   "owner_local_composition": {
     "bytes": 2297856,
-    "sha256": "697788c3c72180473d83137494ce138eae9bc9c395528193b87c6bdd8b52f06a",
+    "sha256": "2398b51e8edcca7fc5416c700c562f9a8a2c54f6fef4d9b15604f209cbda4f0d",
     "hardware_boot_tested": false
   }
 }

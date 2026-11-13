@@ -3,88 +3,88 @@
   "states": [
     {
       "time": "2026-11-13T09:31:45.368067+00:00",
-      "status": "online US3 https"
+      "status": "online primary https"
     },
     {
       "time": "2026-11-13T09:31:58.838816+00:00",
-      "status": "offline US3 probe"
+      "status": "offline primary probe"
     },
     {
       "time": "2026-11-13T09:32:13.537641+00:00",
-      "status": "checking US2 connecting"
+      "status": "checking backup-1 connecting"
     },
     {
       "time": "2026-11-13T09:32:19.330363+00:00",
-      "status": "online US2 https"
+      "status": "online backup-1 https"
     },
     {
       "time": "2026-11-13T09:32:35.450387+00:00",
-      "status": "offline US2 probe"
+      "status": "offline backup-1 probe"
     },
     {
       "time": "2026-11-13T09:32:50.115933+00:00",
-      "status": "checking TEST1 connecting"
+      "status": "checking backup-2 connecting"
     },
     {
       "time": "2026-11-13T09:32:59.151414+00:00",
-      "status": "online TEST1 https"
+      "status": "online backup-2 https"
     },
     {
       "time": "2026-11-13T09:33:13.798883+00:00",
-      "status": "offline TEST1 probe"
+      "status": "offline backup-2 probe"
     },
     {
       "time": "2026-11-13T09:33:29.717245+00:00",
-      "status": "checking SPEED connecting"
+      "status": "checking backup-3 connecting"
     },
     {
       "time": "2026-11-13T09:33:54.407289+00:00",
-      "status": "offline SPEED probe"
+      "status": "offline backup-3 probe"
     },
     {
       "time": "2026-11-13T09:34:10.435411+00:00",
-      "status": "offline US3 retry"
+      "status": "offline primary retry"
     },
     {
       "time": "2026-11-13T09:34:25.116898+00:00",
-      "status": "checking US3 connecting"
+      "status": "checking primary connecting"
     },
     {
       "time": "2026-11-13T09:34:33.802044+00:00",
-      "status": "online US3 https"
+      "status": "online primary https"
     }
   ],
   "checks": {
-    "initial_us3": {
-      "status": "online US3 https",
+    "initial_primary": {
+      "status": "online primary https",
       "led": "green"
     },
     "lost_primary": {
-      "status": "offline US3 probe",
+      "status": "offline primary probe",
       "led": "red"
     },
-    "select_us2": {
-      "status": "online US2 https",
+    "select_backup_1": {
+      "status": "online backup-1 https",
       "led": "green"
     },
-    "select_test1": {
-      "status": "online TEST1 https",
+    "select_backup_2": {
+      "status": "online backup-2 https",
       "led": "green"
     },
-    "try_speed": {
-      "status": "checking SPEED connecting",
+    "try_backup_3": {
+      "status": "checking backup-3 connecting",
       "led": "red"
     },
-    "speed_probe": {
-      "status": "offline SPEED probe",
+    "backup_3_probe": {
+      "status": "offline backup-3 probe",
       "led": "red"
     },
     "all_unavailable": {
-      "status": "offline US3 retry",
+      "status": "offline primary retry",
       "led": "red"
     },
     "automatic_recovery": {
-      "status": "online US3 https",
+      "status": "online primary https",
       "led": "green"
     }
   },

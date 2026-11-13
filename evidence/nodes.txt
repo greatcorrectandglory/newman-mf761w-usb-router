@@ -1,10 +1,10 @@
-ALIAS US3 0 0
+ALIAS primary 0 0
 HTTPS 204 verified
 HTTPS 200 verified
-ALIAS US2 0 0
+ALIAS backup-1 0 0
 HTTPS 204 verified
 HTTPS 200 verified
-ALIAS TEST1 0 0
+ALIAS backup-2 0 0
 HTTPS 204 verified
 HTTPS 200 verified
-ALIAS SPEED 142 142
+ALIAS backup-3 142 142

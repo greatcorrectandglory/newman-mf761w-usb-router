@@ -14,7 +14,7 @@
     "profile_permissions": true,
     "fault_test_rules_removed": true
   },
-  "primary": "online US3 https",
+  "primary": "online primary https",
   "green": [
     "none mmc0 mmc1 [timer] rfkill0 ",
     "500",

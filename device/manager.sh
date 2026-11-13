@@ -87,17 +87,20 @@ start_core() {
 }
 next_node() {
     case "$name" in
-        US3) name=US2;; US2) name=TEST1;; TEST1) name=SPEED;; SPEED) name=US3;;
+        primary) name=backup-1;;
+        backup-1) name=backup-2;;
+        backup-2) name=backup-3;;
+        backup-3) name=primary;;
     esac
 }
 previous=
-name=US3
+name=primary
 failed=0
 set_status offline starting
 while :; do
     if ! wan_present; then
         set_status offline usb
-        stop_child "$core"; core=; name=US3; failed=0
+        stop_child "$core"; core=; name=primary; failed=0
         "$root/network.sh" prepare >/dev/null 2>&1 || :
         wait_seconds 4
         continue
@@ -135,7 +138,7 @@ while :; do
     if test "$failed" -lt 2; then wait_seconds 15; continue; fi
     stop_child "$core"; core=; failed=0
     next_node
-    if test "$name" = US3; then
+    if test "$name" = primary; then
         set_status offline retry
         wait_seconds 15
     fi

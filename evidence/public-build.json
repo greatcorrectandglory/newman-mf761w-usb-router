@@ -29,8 +29,22 @@
   },
   "host": {
     "profile_validation_positive_and_negative": "passed",
-    "read_only_live_status": "online US3 https",
+    "read_only_live_status": "online primary https",
     "full_public_installer_on_device": "not run"
   },
-  "public_image_reflashed": false
+  "public_image_reflashed": false,
+  "public_release_check": {
+    "version": "v1.1.0",
+    "profile_files_default_and_custom": "passed",
+    "invalid_profile_filenames_rejected": true,
+    "resolver_slots_checked": 4,
+    "failover_sequence_offline": [
+      "primary",
+      "backup-1",
+      "backup-2",
+      "backup-3",
+      "primary"
+    ],
+    "deployed_to_field_device": false
+  }
 }
