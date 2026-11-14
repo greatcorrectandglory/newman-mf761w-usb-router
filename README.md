@@ -1,5 +1,13 @@
 # 纽曼 MF761W USB 供网热点
 
+## Windows 电脑网关扩展
+
+**[下载 v1.2.0 Windows x64 热点服务](https://github.com/greatcorrectandglory/newman-mf761w-usb-router/releases/tag/v1.2.0)**。在支持的 MF761W P005 上，纽曼负责 Wi-Fi 接入和本地 DHCP，Windows 负责加密与公网转发。手机直接连接热点，使用者可配置一个主节点及最多三个备用节点。设备在电脑进程退出时仍可分配地址。
+
+解压发行 ZIP，双击 `Start-Here.cmd`，依次选择本机的 `adb.exe`、`xray.exe` 和私有节点文本文件。运行条件为 Windows x64、64 位 Python、已授权 USB ADB 与兼容 P005 基线。使用本机 Windows 用户登录后，服务自动启动，注册的监控任务负责恢复。扩展沿用现有无线设置，安装过程无需重新刷写 MTD4。[安装、诊断、升级与卸载](extension/README.md) · [扩展验收记录](docs/host-service-results.md) · [源码构建](docs/host-service-build.md)
+
+## 设备端加密与固件
+
 纽曼 MF761W V1.1 OM QX（P005）通过 USB 从 Windows 电脑获取网络，再向手机提供 Wi-Fi 热点。设备负责加密转发、节点切换和灯控，手机无需设置代理。适用基线为原厂 Linux 3.4.110-rt140、8 MiB NOR 闪存和 3,244,032 字节的 MTD4 根分区。
 
 **[下载 v1.1.0 完整发布包与固件](https://github.com/greatcorrectandglory/newman-mf761w-usb-router/releases/tag/v1.1.0)**

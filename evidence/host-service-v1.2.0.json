@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-14",
+  "hardware": "one MF761W P005 with the documented modified baseline",
+  "host": "Windows x64 interactive user",
+  "version": "1.2.0",
+  "archive": {
+    "file": "newman-hotspot-windows-x64-v1.2.0.zip",
+    "sha256": "09127de15a6b42ed759cb391aa9a730bd9bf870b8433c1189489082bceff2e23",
+    "bytes": 2537517,
+    "archive_members": 24,
+    "identical_rebuilds": 2
+  },
+  "final_zip_on_hardware": {
+    "upgrade_public_zip": true,
+    "rollback_round_trip": true,
+    "interrupted_upgrade_recovered": true,
+    "tracked_versions": 2,
+    "uninstalled_restored_lan": true,
+    "fresh_install_seconds": 11.9,
+    "fresh_lease": true,
+    "lease_with_host_stopped": true,
+    "resume_seconds": 4.1,
+    "supervisor_recovery_seconds": 8.6,
+    "same_dhcp_worker_after_crash": true,
+    "wifi_station_limit": 2,
+    "final_online": true
+  },
+  "same_forwarder_acceptance": {
+    "dedicated_adb_recovery_seconds": 19.4,
+    "role_unchanged_after_usb_loss": true,
+    "upstream_failover_role": "backup-1",
+    "upstream_failover_seconds": 40.1,
+    "synthetic_clients_DNS_answers_over_real_node": 8,
+    "parallel_certified_HTTPS_via_dedicated_real_proxy": 8
+  },
+  "browser_on_prepackaging_build": {
+    "handset": "Mi 8",
+    "mobile_data": false,
+    "sites": {
+      "www.baidu.com": [
+        {
+          "http": 200,
+          "content_seconds": 4.82,
+          "load_seconds": 38.09,
+          "page_content": true
+        },
+        {
+          "http": 200,
+          "content_seconds": 1.35,
+          "load_seconds": 36.89,
+          "page_content": true
+        },
+        {
+          "http": 200,
+          "content_seconds": 1.21,
+          "load_seconds": 34.39,
+          "page_content": true
+        }
+      ],
+      "www.google.com": [
+        {
+          "http": 200,
+          "content_seconds": 0.72,
+          "load_seconds": 3.7,
+          "page_content": true
+        },
+        {
+          "http": 200,
+          "content_seconds": 0.58,
+          "load_seconds": 3.48,
+          "page_content": true
+        },
+        {
+          "http": 200,
+          "content_seconds": 0.69,
+          "load_seconds": 3.51,
+          "page_content": true
+        }
+      ]
+    }
+  },
+  "not_tested": [
+    "PC reboot / sign-out / resume of the packaged service",
+    "cold boot of a newly flashed public image",
+    "two simultaneous physical client devices",
+    "long-duration soak",
+    "other hardware variants"
+  ]
+}
